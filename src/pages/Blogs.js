@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { blogsData } from "../data";
 
 const Blogs = () => {
-
-    const [blogs, setBlogs] = useState(blogsData);
+    const blogs = blogsData;
 
     const truncateString = (str, num) => {
         if (str.length > num) {
@@ -18,7 +17,7 @@ const Blogs = () => {
 
     return (
         <div>
-            <h2 style={{ textAlign: "center" }}>Blogs page</h2>
+            <h2>Blogs page</h2>
 
             <section>
                 {blogs.map((blog) => {
@@ -26,7 +25,7 @@ const Blogs = () => {
                     return <article key={id}>
                         <h3>{title}</h3>
                         <p>{truncateString(body, 100)}</p>
-                        <Link to={title} state={{ id, title, body }}>Learn More</Link>
+                        <Link className='blog-link' to={title} state={{ id, title, body }}>Learn More</Link>
                     </article>
                 })}
             </section>

@@ -8,8 +8,8 @@ const Blog = () => {
 
     return (
         <div>
-            <h1>{title}</h1>
-            <p>{location.state.body}</p>
+            <h2>{title}</h2>
+            <p style={{ padding: "1rem 2.5rem" }}>{location.state.body}</p>
         </div>
     )
 }
